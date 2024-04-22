@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MULAH Mobile App</title>
+<style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+    }
+    .container {
+        width: 640px; 
+        height: 1136px; 
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    .header {
+        text-align: center;
+        padding: 20px;
+    }
+    .header h1 {
+        margin: 0;
+        color: #333;
+    }
+    .loyalty-points {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .loyalty-points p {
+        margin: 0;
+        color: #666;
+    }
+    .loyalty-points span {
+        display: block;
+        font-size: 24px;
+        color: #000;
+        margin-top: 10px;
+    }
+    .input-group {
+        margin: 20px 0;
+    }
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        pattern: "[0-9]*";
+        inputmode: "numeric";
+    }
+    .input-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: orange;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .input-group button:hover {
+        background-color: #e67e22;
+    }
+		.header {
+    background-color: #F0F0F0; 
+    padding: 20px; 
+    text-align: center; 
+    border-bottom: 3px solid #FFA500; 
+}
+
+.header h1 {
+    color: #FFA500; 
+    font-size: 36px; 
+    margin: 0; 
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Welcome to  MULAH</h1>
+    </div>
+    <div class="loyalty-points">
+        <p>Your loyalty points</p>
+        <span>0</span>
+		
+    </div>
+    <div class="input-group">
+        <input type="text" placeholder="Enter your mobile number" id="mobileNumber">
+
+        <button onclick="checkRewards()">Check Rewards</button>
+    </div>
+</div>
+<script>
+function checkRewards() {
+    var mobileNumber = document.getElementById('mobileNumber').value;
+    if(mobileNumber === '+60173527250') {
+        // Navigate to page 2
+		localStorage.setItem('phone', mobileNumber);
+        window.location.href = 'page_2.html';
+    } else {
+        alert('Invalid mobile number. Please enter the correct to check loyalty points.');
+    }
+}
+</script>
+</body>
+</html>
